@@ -1,15 +1,11 @@
-sorftware updates 中切换 http://mirrors.aliyun.com/ubuntu 镜像源
-
+sorftware updates 中切�?http://mirrors.aliyun.com/ubuntu 镜像�?
 sudo apt-get install fcitx 安装fcitx
 
-log out  退出当前用户后重新再进入界面，确认fcix已经安装，如果桌面右上角没有出现相关图标，重启电脑
-
-sudo dpkg -i sogoupinyin_2.3.2.07_amd64-831.deb  安装搜狗输入法
-
+log out  退出当前用户后重新再进入界面，确认fcix已经安装，如果桌面右上角没有出现相关图标，重启电�?
+sudo dpkg -i sogoupinyin_2.3.2.07_amd64-831.deb  安装搜狗输入�?
 sudo apt-get install -f   报错的话，安装依赖再 sudo dpkg -i sogoupinyin_2.3.2.07_amd64-831.deb 
 
-log out  退出当前用户后重新再进入界面
-
+log out  退出当前用户后重新再进入界�?
 configure current input method 查看是否有搜狗输入法
 
 
@@ -17,52 +13,16 @@ configure current input method 查看是否有搜狗输入法
 
 禁止集显
 sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
-文件中写入
-blacklist nouveau
+文件中写�?blacklist nouveau
 options nouveau modeset=0
-退出保存
-再更新
-sudo update-initramfs -u
+退出保�?再更�?sudo update-initramfs -u
 lsmod | grep nouveau
 重启电脑
 
 sudo apt-get install make 安装make
 
 sudo apt-get install g++ 安装g++
-
-sudo sh ./NVIDIA-Linux-x86_64-450.66.run --no-x-check --no-nouveau-check 安装显卡驱动
-
-
-安装cuda和cudnn
-
-sudo sh ./cuda_10.0.130_410.48_linux.run
-
-
-解压cudnn的tar包
-sudo cp -r cuda/lib64/*   /usr/local/cuda/lib64/   cudnn库拷贝到cuda下面
-
-sudo cp -r cuda/include/*   /usr/local/cuda/include/ 拷贝头文件
-
-配置cuda的环境变量
-sudo gedit  ~/.bashrc
-
-写入
-export CUDA_HOEM=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_HOEM/lib64:$LD_LIBRARY_PATH
-export PATH=$CUDA_HOEM/bin:$PATH
-保存文件
-source ~/.bashrc  使环境变量生效
-
-安装opencv
-
-参考 https://github.com/BVLC/caffe/wiki/OpenCV-3.3-Installation-Guide-on-Ubuntu-16.04
-
-sudo apt-get install --assume-yes build-essential cmake git
-sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
-sudo apt-get install --assume-yes libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng-dev libtiff5-dev libjasperreports-java
-sudo apt-get install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-sudo apt-get install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
-sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils vtk6
+sd awr afsaeasdadada
 sudo apt-get install --assume-yes liblapacke-dev libopenblas-dev libgdal-dev checkinstall
 
 再opencv文件夹下
@@ -75,9 +35,7 @@ sudo make install
 sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
 
-pkg-config opencv --libs 查看opencv库
-pkg-config opencv --cflags 查看头文件
-pkg-config --modversion opencv 查看opencv版本
+pkg-config opencv --libs 查看opencv�?pkg-config opencv --cflags 查看头文�?pkg-config --modversion opencv 查看opencv版本
 
 sudo apt install gitk  安装gitk
 
@@ -92,8 +50,7 @@ sudo make install
 cmake --version 查看cmake版本
 
 
-#安装基本深度学习库
-sudo apt-get install python3-pip  安装python3的pip
+#安装基本深度学习�?sudo apt-get install python3-pip  安装python3的pip
 
 sudo apt-get install python-pip   安装python2.7的pip
 
@@ -105,14 +62,12 @@ sudo pip3 install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirro
  
 #安装tensorrt
 
-解压并进入tensorrt的文件目录
-
+解压并进入tensorrt的文件目�?
 分别使用sudo pip3 install 安装 ./python/tensorrt-7.0.0.11-cp36-none-linux_x86_64.whl
 
 ./uff/uff-0.6.5-py2.py3-none-any.whl 以及graphsurgeon/graphsurgeon-0.4.1-py2.py3-none-any.whl
 
-并将库文件拷贝到系统环境下
-
+并将库文件拷贝到系统环境�?
 sudo cp -r ./lib/* /usr/lib
 sudo cp -r ./include/* /usr/include
 
